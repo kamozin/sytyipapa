@@ -1,0 +1,758 @@
+$mar: 0 auto;
+$pad: 0px;
+$cont1: 1024px; 
+$l: left; 
+$bel: #fff;
+$sm-1: 10%;
+$sm-2: 20%;
+$sm-3: 30%;
+$sm-4: 40%;
+$sm-5: 50%;
+$sm-6: 60%;
+$sm-7: 70%;
+$sm-8: 80%;
+$sm-9: 90%;
+$sm-10: 100%;
+$statw: 1024px;
+$im: !important;
+@mixin respond-to($media) {
+  @if $media == minitel {
+    @media only screen and (max-width: 319px) { @content; }
+  }
+  @else if $media == handhelds {
+    @media only screen and (min-width: 320px) and (max-width: 375px) { @content; }
+  }
+  @else if $media == wide-handhelds {
+    @media only screen and (min-width: 376px) and (max-width: 425px) { @content; }
+  }
+  @else if $media == tablets {
+    @media only screen and (min-width: 426px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == planchet {
+    @media only screen and (min-width: 768px) and (max-width: 1023px) { @content; }
+  }
+  @else if $media == netbook {
+    @media only screen and (min-width: 1024px) and (max-width: 1279px) { @content; }
+  }
+  @else if $media == neetbook {
+    @media only screen and (min-width: 1280px) and (max-width: 1365px) { @content; }
+  }
+  @else if $media == desktopsmol {
+    @media only screen and (min-width: 1366px) and (max-width: 1439px) { @content; }
+  }
+  @else if $media == desktoppt {
+    @media only screen and (min-width: 1440px) and (max-width: 1599px) { @content; }
+  }
+  @else if $media == desktopxl {
+    @media only screen and (min-width: 1600px) and (max-width: 1699px) { @content; }
+  }
+  @else if $media == desktoplarg {
+    @media only screen and (min-width: 1700px) and (max-width: 1950px) { @content; }
+  }
+}
+@mixin nomp {margin: 0px 0px 0px 0px$im; padding: 0px 0px 0px 0px$im;}
+@mixin f14 {font-size: 14px$im;}
+@mixin f15 {font-size: 15px$im;}
+@mixin f16 {font-size: 16px$im;}
+@mixin f17 {font-size: 17px$im;}
+@mixin f18 {font-size: 18px$im;}
+@mixin f19 {font-size: 19px$im;}
+@mixin f20 {font-size: 20px$im;}
+@mixin mrl{margin-left: 13%$im; margin-top: 20%$im;}
+@mixin img_hed_tel {margin-left: 20%$im; width: 15%$im; }
+@mixin fullwidth {width: 100%$im; padding-right: 5px$im; padding-left: 5px$im; text-align: center$im;}
+@mixin text { margin-left: 2%$im; font-size: 18px$im; text-align: left$im;}
+@mixin minisoch {float: left; padding: 2%;}
+@mixin ml20 {margin-left: $sm-2+5%; }
+@mixin tara1 {background: url(image/compani/tara1_1.png) no-repeat; background-size: 100%;  left: 0; width: 70px; height: 100px;}
+@mixin tara2{ background: url(image/compani/tara2_1.png) no-repeat; background-size: 100%; right: 0; width: 85px; height: 100px;
+    top: 55%;}
+    @mixin tara22{ background: url(image/compani/tara2_1.png) no-repeat; background-size: 100%; right: 0; width: 76px$im; height: 100px;
+    top: 55%;}
+@mixin button { margin-right: 5%;}
+@mixin contact_footer {float: none; margin-right: 0px; padding-top: 0;}
+@mixin fln {float: none; margin-right: 0px;}
+@mixin full { width: 100%; float: none; margin: 0;}
+@mixin korz {background: url(image/menu/korzina111.png) no-repeat; background-size: 100%; right: 3%; width: 15%; top: 10px;}
+@mixin menu_tel {position: fixed; top: 0; width: 100%;}
+@mixin vising {display: inline-block$im;}
+
+@-moz-document url-prefix() 
+{ 
+#tara2 {
+@include respond-to (minitel) {@include tara22;}
+  @include respond-to(handhelds) { @include tara22;};
+  @include respond-to(wide-handhelds) { @include tara22; };
+  @include respond-to(tablets) { @include tara22; };
+} 
+} 
+input {text-align: center;}
+.caret {
+	@include respond-to (minitel) {@include vising;}
+  @include respond-to(handhelds) { @include vising;};
+  @include respond-to(wide-handhelds) { @include vising; };
+  @include respond-to(tablets) { @include vising; };
+}
+
+.container, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5 {
+  @include respond-to (minitel) {@include fullwidth;}
+  @include respond-to(handhelds) { @include fullwidth;};
+  @include respond-to(wide-handhelds) { @include fullwidth; };
+  @include respond-to(tablets) { @include fullwidth; };
+}
+#telefone_home_image{
+	@include respond-to (minitel) {@include img_hed_tel;}
+	@include respond-to(handhelds) { @include img_hed_tel;};
+	@include respond-to(wide-handhelds) { @include img_hed_tel; };
+  @include respond-to(tablets) { @include img_hed_tel; };
+}
+#telefon_header {
+	@include respond-to (minitel) {@include text;}
+  @include respond-to(handhelds) { @include text;};
+  @include respond-to(wide-handhelds) { @include text; };
+  @include respond-to(tablets) { @include text; };
+}
+#top_menu {
+	@include respond-to (minitel) {@include mrl;@include f18 width: $sm-8+5%$im; }
+  @include respond-to(handhelds) { @include mrl; @include f16 width: $sm-8+5%$im;};
+  @include respond-to(wide-handhelds) { @include mrl; @include f20 width: $sm-8+5%$im; };
+  @include respond-to(tablets) { @include mrl; @include f20 width: $sm-8+5%$im;};
+}
+header p {
+	@include respond-to (minitel) {@include f18;}
+  @include respond-to(handhelds) { @include f18;};
+  @include respond-to(wide-handhelds) { @include f18; };
+  @include respond-to(tablets) { @include f18; };
+}
+html, body, .row, .container {
+	@include respond-to (minitel) {@include nomp;}
+  @include respond-to(handhelds) { @include nomp;};
+  @include respond-to(wide-handhelds) { @include nomp; };
+  @include respond-to(tablets) { @include nomp; };
+}
+
+#logo img {
+	@include respond-to (minitel) {margin-left: 2%$im;}
+  @include respond-to(handhelds) { margin-left: 2%$im;};
+  @include respond-to(wide-handhelds) {margin-left: 2%$im;};
+  @include respond-to(tablets) { margin-left: 2%$im; };
+}
+#ssm1 {
+	@include respond-to (minitel) {@include ml20}
+  @include respond-to(handhelds) {@include ml20};
+  @include respond-to(wide-handhelds) {@include ml20};
+  @include respond-to(tablets) { @include ml20 };
+}
+#ssm1 img {
+	@include respond-to (minitel) {@include minisoch;}
+  @include respond-to(handhelds) { @include minisoch;};
+  @include respond-to(wide-handhelds) { @include minisoch;};
+  @include respond-to(tablets) { @include minisoch; };
+}
+
+input[type=button] {
+	@include respond-to (minitel) {@include button;}
+  @include respond-to(handhelds) { @include button;};
+  @include respond-to(wide-handhelds) { @include button;};
+  @include respond-to(tablets) { @include button; };
+}
+		.zal {
+			width: $sm-10;
+			margin: 0;
+		}
+		.wrapper {
+			background: url(image/fon/fon.png) repeat-y;
+			background-size: 100%; 
+			@extend .zal;
+					}
+		.wrapper_goriazie{
+			background: url(image/fon/fongoriazie.png) repeat-y;
+			background-size: 100%; 
+			@extend .zal;
+					}
+		.wrapper_cart_produkt{
+			background: url(image/fon/cart_prodykt.png) repeat-y;
+			background-size: 100%; 
+			@extend .zal;
+					}
+		.wrapper_lapcha {
+			background: url(image/fon/fonlapcha.png) repeat-y;
+			background-size: 100%; 
+			@extend .zal;
+					}
+		.wrapper_napitki{
+			background: url(image/fon/fonnapitki.png) repeat-y;
+			background-size: 100%; 
+			@extend .zal;
+			}
+		.wrapper_pizza {
+			@extend .zal;
+			background: url(image/fon/fonpizza.png) repeat-y;
+			background-size: 100%; 
+		}
+		.wrapper_obedi {
+			@extend .zal;
+			background: url(image/fon/fonobed.png) repeat-y;
+			background-size: 100%; 
+		}
+		.wrapper_roll {
+			@extend .zal;
+			background: url(image/fon/fonroll.png) repeat-y;
+			background-size: 100%; 
+		}
+		.wrapper_salati {
+			@extend .zal;
+			background: url(image/fon/fonsalati.png) repeat-y;
+			background-size: 100%; 
+		}
+
+		.wrapper_susi {
+			@extend .zal;
+			background: url(image/fon/fonsusi.png) repeat-y;
+			background-size: 100%; 
+		}
+
+header {
+	/*width: $cont1;
+	margin: $mar;
+	padding: $pad;
+	background-color: $bel;
+	padding-top: 1%;*/
+
+		#header_home {
+		padding-top: 1%;
+	}
+	p {
+		font-family: Arial;
+	}
+	
+		.container {
+			
+		background-color: $bel;
+		 #logo img{
+		 	width: 95%;
+    		margin-left: 4%;
+
+		 }
+		}
+		
+		#telefone_home_image{
+			float: $l;
+		margin-right: 5%;
+		width: 18%;
+		}
+		#top_menu {
+			width: ($sm-10)-3%;
+			float: $l;
+			margin: 2% 0 7% 2%;
+
+			ul {list-style-type: none; padding-left: 0;}
+			li 
+			{float: left; margin-right: 5px; border-left: 1px solid rgb(207, 207, 207); padding-left: 5px; 
+				a {color: #000; font-weight: 600;}
+			}
+			li:first-child {border-left: none; padding-left: 0;}
+
+		}
+		
+		#no_padding_right{padding-right: 0;}
+		#no_padding_left{padding-left: 0;}
+		.no_padding_left{padding-left: 0;}
+		#time_work {line-height: 0.5; padding-top: 5%; padding-left: 5%; font-size: 1.3em;}
+		#telefon_header{margin-bottom: 10%;}
+		#ssm{margin-bottom: 3%;}
+		#ssm1 {
+			img {
+				padding-bottom: 5%;
+			}
+		}
+}
+
+#qty_obed {
+      background-color: red;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+
+@include respond-to (minitel) {width: 80%$im; margin-left: 10%$im;}
+  @include respond-to(handhelds) { width: 80%$im; margin-left: 10%$im;};
+  @include respond-to(wide-handhelds) { width: 80%$im; margin-left: 10%$im; };
+  @include respond-to(tablets) { width: 80%$im; margin-left: 10%$im; };
+
+
+    input[type=button] {
+      background-color: red;
+          border: none;
+    color: #fff;
+    }
+}
+
+.container {
+
+		width: $statw;
+		margin: auto;
+		background-color: $bel;
+		.navbar-toggle {
+			float: left;
+			overflow: auto;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding: 0px;
+			 .fa-list:before {
+  font-size: 30px$im;
+    color: #fff$im;
+}
+			@include respond-to (minitel) {@include fln;}
+  @include respond-to(handhelds) { @include fln;};
+  @include respond-to(wide-handhelds) { @include fln; };
+  @include respond-to(tablets) { @include fln; };
+
+
+
+		}
+        #menu.fixed {
+            background-color: #ff0000;
+    background-image: linear-gradient(to bottom, #ff0000, #ff0000);
+    background-repeat: repeat-x;
+    border-color: #ff0000 #ff0000 #ff0000;
+    min-height: 40px;
+    z-index: 999;
+    position: fixed;
+    width: 90%;
+    top: 0px;	
+    @include respond-to (minitel) { width: 100%;}
+  @include respond-to(handhelds) {  width: 100%;};
+  @include respond-to(wide-handhelds) {  width: 100%; };
+  @include respond-to(tablets) { width: 100%; };
+  @include respond-to(desktopsmol) { width: 85%; };
+  @include respond-to(desktoppt) { width: 81%; };
+  @include respond-to(desktopxl) { width: 72.5%; };
+  @include respond-to(desktoplarg) { width: 60%; };
+
+    	.navbar-nav>li>a {
+    padding-top: 13px;
+    padding-bottom: 13px;
+	    font-size: 1.3em;
+    color: #fff;
+
+	}
+		.navbar-nav>li>a:hover {
+			background-color: #a70000;
+		}
+
+    		#korzina {
+    background: url(image/menu/korzina123.png) no-repeat;
+    background-size: 95%;
+    float: right;
+    position: absolute;
+    right: -3%;
+    width: 19%;
+    top: -1px;
+    height: 4em;
+
+    @include respond-to (minitel) {@include korz;}
+  @include respond-to(handhelds) { @include korz;};
+  @include respond-to(wide-handhelds) { @include korz; };
+  @include respond-to(tablets) { @include korz; };
+   
+    	#cart {
+    		width: 70%;
+    		padding-left: 5%;
+    		@include respond-to (minitel) {display: none;}
+  @include respond-to(handhelds) { display: none;};
+  @include respond-to(wide-handhelds) { display: none;};
+  @include respond-to(tablets) {display: none; };
+    	}
+    	#cart-total {
+    	font-size: 0.8em;
+    	font-weight: 600;
+    	color: #fff;
+    	line-height: 2.3;
+    	}
+				}
+        }
+
+		#menu.default {
+			    background-color: #ff0000;
+    background-image: linear-gradient(to bottom, #ff0000, #ff0000);
+    background-repeat: repeat-x;
+    border-color: #ff0000 #ff0000 #ff0000;
+    min-height: 40px;
+    z-index: 999;
+    position: relative;
+    width: 90%;
+    @include respond-to (minitel) { @include menu_tel}
+  @include respond-to(handhelds) {  @include menu_tel};
+  @include respond-to(wide-handhelds) {  @include menu_tel };
+  @include respond-to(tablets) { @include menu_tel};
+
+    		.navbar-nav>li>a {
+    padding-top: 13px;
+    padding-bottom: 13px;
+	    font-size: 1.3em;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+	}
+		.navbar-nav>li>a:hover {
+			background-color: #a70000;
+		}
+
+    		#korzina {
+    background: url(image/menu/korzina123.png) no-repeat;
+    background-size: 100%;
+    float: right;
+    position: absolute;
+    right: -11%;
+    width: 20%;
+    top: -2px;
+    height: 4em;
+
+    @include respond-to (minitel) {@include korz;}
+  @include respond-to(handhelds) { @include korz;};
+  @include respond-to(wide-handhelds) { @include korz; };
+  @include respond-to(tablets) { @include korz; };
+    
+    	#cart {
+    		width: 70%;
+    		padding-left: 5%;
+    		@include respond-to (minitel) {display: none;}
+  @include respond-to(handhelds) { display: none;};
+  @include respond-to(wide-handhelds) { display: none;};
+  @include respond-to(tablets) {display: none; };
+    	}
+    	#cart-total {
+    	font-size: 0.8em;
+    	font-weight: 600;
+    	color: #fff;
+    	line-height: 2.3;
+    	}
+				}
+		}
+		
+		.fade {
+			margin-top: 2%;}
+		.fade img{
+			width: 100%;
+		}
+			
+			#otstup_bottom {
+				margin-top: 0%;
+				margin-bottom: 2%;
+			}
+
+		
+		.xot_prod {
+			width: 100%;
+			float: left;
+			h2 {
+				text-align: center;
+			}
+			.prodykt {
+				width: 23%;
+    			border: 1px solid #969696;
+    			text-align: center;
+    			padding-top: 2%;
+    			float: left;
+    			margin: 1%;
+    			border-bottom: none;
+    				@include respond-to (minitel) {width: ($sm-10)-2%;}
+  				@include respond-to(handhelds) { width: ($sm-10)-2%;};
+  				@include respond-to(wide-handhelds) {width: ($sm-10)-2%;};
+  				@include respond-to(tablets) {width: ($sm-10)-2%;};
+
+    				img {
+    					width: 80%;
+    					@include respond-to (minitel) {width: $sm-6;}
+  				@include respond-to(handhelds) { width: $sm-6;};
+  				@include respond-to(wide-handhelds) {width: $sm-6;};
+  				@include respond-to(tablets) {width: $sm-6;};
+    				}
+    			h4, p, .price{
+    				text-align: left;
+    				text-indent: 20px;
+    			}
+    			h4 {
+    				color: #ff6000;
+    			}
+    			.price {
+    				color: red;
+    			}
+			}
+
+			.qty-spinedit {
+				background-color: red;
+
+				.qty-minus, .qty-plus {
+					background-color: red;
+    				color: #fff;
+    				border: none;
+				}
+			}
+		}
+		}
+#kompani {
+ padding-left: 0;
+  padding-right: 0;
+}
+
+.compani {
+      width: 100%;
+      float: left;
+      text-align: center;
+      background: url(image/compani/foncompani.jpg) no-repeat;
+      background-size: cover;
+      margin-top: 2%;
+      padding-top: 3%;
+        padding-bottom: 3%;
+        position: relative;
+      #tara1 {
+      background: url(image/compani/tara1.png) no-repeat;
+      background-size: 100%;
+        position: absolute;
+        left: -3%;
+          width: 200px;
+          height: 200px;
+        @include respond-to (minitel) {@include tara1;}
+          @include respond-to(handhelds) { @include tara1;};
+          @include respond-to(wide-handhelds) { @include tara1; };
+          @include respond-to(tablets) { @include tara1; };
+      }
+      #tara2 {
+      background: url(image/compani/tara2.png) no-repeat;
+      background-size: 100%;
+        position: absolute;
+        right: -4%;
+          width: 250px;
+          top: 45%;
+          height: 150px;
+        @include respond-to (minitel) {@include tara2;}
+          @include respond-to(handhelds) { @include tara2;};
+          @include respond-to(wide-handhelds) { @include tara2; };
+          @include respond-to(tablets) { @include tara2; };
+      }
+      #text_compani {
+        width: 65%;
+          margin-left: 15%;
+          color: #fff;
+          h2 {
+            margin-bottom: 5%;
+          }
+      }
+    }
+  .obed {
+        width: 100%;
+        float: left;
+        margin-top: 2%;
+          #option_obed {
+            width: 50%;
+            float: left;
+            text-align: center;
+            margin-top: 4%;
+            @include respond-to (minitel) {width: $sm-10;}
+              @include respond-to(handhelds) { width: $sm-10;};
+              @include respond-to(wide-handhelds) { width: $sm-10;};
+              @include respond-to(tablets) { width: $sm-10;};
+          }
+          #option_obed h3 {
+            margin-bottom: 5%;
+              margin-top: 5%;
+          }
+          #option_obed h3>span{
+            background-color: red;
+              padding: 0.5% 7% 0.5% 7%;
+              color: #fff;
+              text-transform: uppercase;
+          }
+          #laine {
+                width: 25%;
+                color: #000;
+                border-bottom: 1px solid;
+          }
+          #cost{
+            color: red;
+            font-weight: 600;
+          }
+          #cost span {
+            text-transform: uppercase;
+          }
+
+          #img_obed {
+            width: 50%;
+            float: left;
+            text-align: center;
+            @include respond-to (minitel) {width: $sm-10;}
+              @include respond-to(handhelds) { width: $sm-10;};
+              @include respond-to(wide-handhelds) { width: $sm-10;};
+              @include respond-to(tablets) { width: $sm-10;};
+            img{
+              width: 100%;
+            }
+          }
+      }
+
+footer {
+	width: 100%;
+	background: url(image/footer/footer.png) no-repeat;
+	background-size: cover;
+	padding-top: 2%;
+    padding-bottom: 2%;
+    
+    .footer_blac {
+    	width: 100%;
+    	opacity: 0.7;
+ 	 background: #000;
+ 	 padding-top: 2%;
+    padding-bottom: 2%;
+
+    .container {
+
+    	background-color: transparent;
+
+    	ul {
+    		width: 70%;
+    	list-style: none;
+    	float: left;
+    	padding-left: 0;
+
+    		@include respond-to (minitel) {@include full;}
+		@include respond-to(handhelds) { @include full;};
+		@include respond-to(wide-handhelds) { @include full; };
+  		@include respond-to(tablets) { @include full; };
+
+    	li>a {
+    		color: #fff;
+    	}
+
+    	li>a:hover, li>a:focus {
+    		background-color: transparent; 
+    	}
+
+    	}
+    	#contact_footer p {
+    		color: #fff;
+    		padding-top: 1.5%;
+    		float: right;
+   			margin-right: 5%;
+   			@include respond-to (minitel) {@include contact_footer;}
+ 			@include respond-to(handhelds) { @include contact_footer;};
+  			@include respond-to(wide-handhelds) { @include contact_footer; };
+  			@include respond-to(tablets) { @include contact_footer; };
+    	}
+    }
+    }
+}
+#otstup {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.cart_prodykt {
+	width: 100%;
+	float: left;
+
+
+		#cart_prodykt_img {
+			width: 50%;
+    float: left;
+    padding: 3% 3% 3% 3%;
+    text-align: center;
+    border: 2px solid #999999;
+    margin-right: 5%;
+      @include respond-to (minitel) {width: 100%;}
+      @include respond-to(handhelds) { width: 100%;};
+        @include respond-to(wide-handhelds) { width: 100%; };
+        @include respond-to(tablets) { width: 100%; };
+			img {
+				width: 50%;
+			}
+		}
+
+		.prodykt_cost {
+			width: 40%;
+    		float: left;
+    		text-align: center;
+    		padding-top: 2%;
+        @include respond-to (minitel) {width: 100%;}
+      @include respond-to(handhelds) { width: 100%;};
+        @include respond-to(wide-handhelds) { width: 100%; };
+        @include respond-to(tablets) { width: 100%; };
+    		h4,p {
+    			line-height: 3;
+    		}
+
+    		
+    		.qty-spinedit {
+    			background-color: red;
+    			width: 60%;
+    			margin-left: 20%; 
+          @include respond-to (minitel) {width: 80%; margin-left: 10%; }
+      @include respond-to(handhelds) { width: 80%; margin-left: 10%;};
+        @include respond-to(wide-handhelds) { width: 80%; margin-left: 10%; };
+        @include respond-to(tablets) { width: 80%; margin-left: 10%; };
+
+    			.qty-minus, .qty-plus  {
+    				background-color: red;
+    				color: #fff;
+    				border: none;
+    			}
+    		}
+		}
+}
+
+.produkt_confim {
+	width: 100%;
+	float: left;
+}		
+
+.container>.navbar-header, .container>.navbar-collapse {
+	margin-right: 0px!important; 
+	margin-left:0px!important; 
+}
+.visible-xs {color: $bel; font-size: 18px; }
+.list-unstyled {text-align: center; background-color: red; 
+		li>a {
+			padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 1.2em;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    		
+		}
+
+		li>a:hover, li>a:focus {
+    			background-color: #c50303!important;
+    		}
+}
+
+.navbar-nav>li>.dropdown-menu { background-color: red; text-decoration: none; }
+.nav>li:hover, .nav>li:focus, .nav>li:active  {
+	background-color: red;
+}
+
+.dropdown:hover, .dropdown:focus, .dropdown:active, .nav .open>a {
+	background-color: #c50303!important;
+}
+
+.search {
+ vertical-align: middle;
+    padding: 13px 15px 10px 20px;
+    button{
+      background-color: transparent$im;
+      border: none;
+        .fa-search {
+          color: #fff;
+          font-size: 16px$im;
+                }
+                .fa-search:hover, .fa-search:active, .fa-search:focus {
+                      text-shadow: 0px 1px 5px white, 0px -1px 0em;
+                }
+    }
+    button:hover, button:active, button:focus {
+      border: none;
+    }
+}
+
+.click {
+  display: none;
+}
