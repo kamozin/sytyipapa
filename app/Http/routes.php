@@ -21,7 +21,7 @@ Route::get('/cart', ['as' => 'main', 'uses' => 'CartController@index']);
 
 
 
-Route::group(['middleware' => ['web']], function () {
+//Route::group(['middleware' => ['web']], function () {
 //Админка
     Route::auth();
 
@@ -35,4 +35,4 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/home/category/destroy/{id}', 'Admin\CategoryController@destroy');
 
 
-});
+//});
