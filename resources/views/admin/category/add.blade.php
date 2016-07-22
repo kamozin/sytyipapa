@@ -32,7 +32,7 @@
 
                             @endif
 
-                            <form id="demo-form2" enctype="multipart/form-data"  method="POST" action="/admin/category/create" class="form-horizontal form-label-left">
+                            <form id="demo-form2" enctype="multipart/form-data"  method="POST" action="/home/category/create" class="form-horizontal form-label-left">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Наименование категории <span class="required">*</span>
@@ -45,6 +45,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="parent_id">Категория родитель <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+
                                         <select name="parent_id" class="form-control" id="parent_id">
                                             <option value="0">Родительская категория</option>
                                             @foreach($categories as $c)
@@ -57,24 +58,21 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="message" class="control-label col-md-3 col-sm-3 col-xs-12">Описание категории</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea id="message" class="form-control" name="text"></textarea>
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="file" class="control-label col-md-3 col-sm-3 col-xs-12">Картинка  категории</label>
+                                    <label for="tema" class="control-label col-md-3 col-sm-3 col-xs-12">Картинка  категории</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input id="tema" class="form-control col-md-7 col-xs-12" type="file" name="file">
                                     </div>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="temas" class="control-label col-md-3 col-sm-3 col-xs-12">Фон  категории</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="temas" class="form-control col-md-7 col-xs-12" type="file" name="file_background">
+                                    </div>
+                                </div>
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                        <a href="/users" class="btn btn-primary">Отмена</a>
+                                        <a href="/home/category" class="btn btn-primary">Отмена</a>
                                         <button type="submit" class="btn btn-success">Создать категорию</button>
                                     </div>
                                 </div>

@@ -4,8 +4,8 @@
         <h3>Категории</h3>
         <ul class="nav side-menu">
 
-            <li><a href="/admin/category/"><i class="fa fa-plus-circle"></i>Все категории</a></li>
-            <li><a href="/admin/category/store"><i class="fa fa-plus-circle"></i>Добавить категорию</a></li>
+            <li><a href="/home/category/"><i class="fa fa-plus-circle"></i>Все категории</a></li>
+            <li><a href="/home/category/store"><i class="fa fa-plus-circle"></i>Добавить категорию</a></li>
 
 
 

@@ -10,7 +10,7 @@
                     <div class="panel-heading">Категории</div>
 
                     <div class="panel-body">
-                        <a href="/admin/category/store" class="btn btn-primary">Добавить категорию</a>
+                        <a href="/home/category/store" class="btn btn-primary">Добавить категорию</a>
                     </div>
                     @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -30,6 +30,7 @@
                                 <th>Категория родитель</th>
                                 <th>Редактировать</th>
                                 <th>Обновить фото категории</th>
+                                <th>Обновить фон категории</th>
                                 <th>Удалить</th>
                             </tr>
                             </thead>
@@ -54,9 +55,10 @@
 
                                         @endif
                                     </td>
-                                    <td><a href="/admin/category/edit/{{$c->id}}">Редактировать</a></td>
-                                    <td><a href="/admin/category/photo/{{$c->id}}">Обновить фото</a></td>
-                                    <td><a href="/admin/category/destroy/{{$c->id}}">Удалить</a></td>
+                                    <td><a href="/home/category/edit/{{$c->id}}">Редактировать</a></td>
+                                    <td><a href="/home/category/photo/{{$c->id}}">Обновить фото</a></td>
+                                    <td><a href="/home/category/background/{{$c->id}}">Обновить фон</a></td>
+                                    <td><a href="/home/category/destroy/{{$c->id}}">Удалить</a></td>
 
                                 </tr>
                             @endforeach

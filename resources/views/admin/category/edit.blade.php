@@ -13,7 +13,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Добавить категорию</h2>
+                        <h2>Обновить категорию</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -41,7 +41,7 @@
                             </div>
 
                         @endif
-                        <form id="demo-form2" enctype="multipart/form-data"  method="POST" action="/admin/category/update" class="form-horizontal form-label-left">
+                        <form id="demo-form2" enctype="multipart/form-data"  method="POST" action="/home/category/update" class="form-horizontal form-label-left">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="id" value="{{ $category->id }}">
                             <div class="form-group">
@@ -58,6 +58,12 @@
                                     <select name="parent_id" class="form-control" id="parent_id">
                                         @if($category->parent_id==0)
                                         <option value="0" selected >Родительская категория</option>
+                                            @foreach($categories as $c)
+
+
+                                                    <option value="{{$c->id}}">{{$c->name}}</option>
+
+                                            @endforeach
                                         @else
 
                                             @foreach($categories as $c)
@@ -74,12 +80,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="message" class="control-label col-md-3 col-sm-3 col-xs-12">Описание категории</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <textarea id="message" class="form-control" name="text">{{$category->text}}</textarea>
-                                </div>
-                            </div>
+
 
 
                             <div class="ln_solid"></div>
