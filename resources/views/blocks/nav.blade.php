@@ -13,9 +13,9 @@
         <h3>Товары</h3>
         <ul class="nav side-menu">
 
-            <li><a href="/admin/products/store"><i class="fa fa-plus-circle"></i>Добавить товар</a>
+            <li><a href="/home/products/store"><i class="fa fa-plus-circle"></i>Добавить товар</a>
             </li>
-            <li><a href="/admin/products"><i class="fa fa-plus-circle"></i>Все товары</a>
+            <li><a href="/home/products"><i class="fa fa-plus-circle"></i>Все товары</a>
             </li>
 
 
@@ -31,7 +31,7 @@
 
         </ul>
 
-        <h3>Новости</h3>
+        <h3>Заказы</h3>
         <ul class="nav side-menu">
 
             <li><a href="/admin/news/store"><i class="fa fa-plus-circle"></i>Добавить новости</a>
@@ -48,15 +48,6 @@
 
 
         </ul>
-        <h3>Страницы</h3>
-        <ul class="nav side-menu">
 
-            {{--<li><a href="/admin/page/store"><i class="fa fa-plus-circle"></i>Добавить страницу</a>--}}
-            {{--</li>--}}
-            <li><a href="/admin/page"><i class="fa fa-plus-circle"></i>Все страницы</a>
-            </li>
-
-
-        </ul>
     </div>
   </div>

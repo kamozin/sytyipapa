@@ -33,7 +33,7 @@
                         @endif
 
                         <form id="demo-form2" enctype="multipart/form-data" method="POST"
-                              action="/admin/products/update" class="form-horizontal form-label-left">
+                              action="/home/products/update" class="form-horizontal form-label-left">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="id" value="{{ $product->id }}">
 
@@ -97,7 +97,7 @@
                                     <select name="id_category" class="form-control" id="parent_id">
                                         @foreach($category as $c)
 
-                                            <option value="{{$c->id}}" @if($product->id_category==$c->id)selected @endif>{{$c->name}}</option>
+                                            <option value="{{$c->id}}" @if($product->category_id==$c->id)selected @endif>{{$c->name}}</option>
 
                                         @endforeach
                                     </select>
@@ -113,52 +113,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-
-                                <h1>Справочники</h1>
-
-                                <?php $i = 0; ?>
-                                @foreach($dir as $d)
-
-                                    <h2 style="color: darkred;">{{$d['name']}}</h2>
-
-                                    @foreach($d['razdel'] as $razdel)
-                                        <div class="col-md-12">
-                                            <h2>{{$razdel['name']}}</h2>
 
 
-                                            @foreach($razdel['properties'] as $r)
-
-                                                @if(empty($r))
-
-                                                    <p>Нет свойств</p>
-                                                @else
-
-
-
-                                                    <div class="col-md-2">
-                                                        <label for="id_{{$i}}" class="fest @foreach($properties_arr as $p) @if($p==$r['id']) click @endif @endforeach">
-                                                            <input type="checkbox"  id="id_{{$i}}" name="directory[]"
-                                                                   @foreach($properties_arr as $p) @if($p==$r['id']) checked @endif @endforeach value="{{$r['id']}}">
-                                                            <img  width="50" height="50"   src="/gallery/directory/{{$r['img']}}" alt="">
-                                                            <p> {{$r['name']}}</p>
-                                                        </label>
-
-                                                    </div>
-
-
-                                                    <?php $i++; ?>
-                                                @endif
-
-                                            @endforeach
-                                        </div>
-                                    @endforeach
-
-                                @endforeach
-
-
-
-                            {{--</div>--}}
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

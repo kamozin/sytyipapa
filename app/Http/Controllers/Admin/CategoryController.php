@@ -91,7 +91,7 @@ class CategoryController extends Controller
         $extension = $file->getClientOriginalExtension();
         $filename=TranslitController::str2url($filename);
         $filename = $filename . '-' . time() . '.' . $extension;
-        $category->img = $filename;
+        $category->background_img = $filename;
 
         $request->file('file_background')->move('gallery/category/background/', $filename);
 
@@ -116,11 +116,24 @@ class CategoryController extends Controller
 
     public function edit($id){
 
+        $category=Category::find($id);
+
+        $categories=Category::all();
+
+        return view('admin.category.edit', ['category'=>$category, 'categories'=>$categories ]);
 
     }
 
     public function update(Request $request){
 
+        $category=Category::find($request->id);
+
+        $category->name=$request->name;
+        $category->parent_id=$request->parent_id;
+
+        $category->save();
+
+        return redirect('/home/category')->with('success', 'Категория успешно обновлена');
 
 
     }

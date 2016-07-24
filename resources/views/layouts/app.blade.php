@@ -30,7 +30,8 @@
     <link href="/includes/admin/js/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/includes/admin/js/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/includes/admin/js/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
-
+    <!-- select2 -->
+    <link href="/includes/admin/css/select/select2.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="../assets/js/ie8-responsive-file-warning.js"></script>

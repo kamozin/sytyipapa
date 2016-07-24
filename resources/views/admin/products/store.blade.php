@@ -33,7 +33,7 @@
                         @endif
 
                         <form id="demo-form2" enctype="multipart/form-data" method="POST"
-                              action="/admin/products/create" class="form-horizontal form-label-left">
+                              action="/home/products/create" class="form-horizontal form-label-left">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
@@ -93,7 +93,7 @@
                                 </label>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select name="id_category" class="form-control" id="parent_id">
+                                    <select name="id_category" class="select2_single form-control" id="parent_id">
                                         @foreach($category as $c)
 
                                             <option value="{{$c->id}}">{{$c->name}}</option>
@@ -114,61 +114,14 @@
 
 
                             <div class="form-group">
-                                <label for="file" class="control-label col-md-3 col-sm-3 col-xs-12">Картинка 1</label>
+                                <label for="file" class="control-label col-md-3 col-sm-3 col-xs-12">Фото товара</label>
 
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input id="tema" class="form-control col-md-7 col-xs-12" type="file" name="file">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="file" class="control-label col-md-3 col-sm-3 col-xs-12">Картинка 2</label>
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="tema" class="form-control col-md-7 col-xs-12" type="file" name="files">
-                                </div>
-                            </div>
-                                <div class="col-md-12">
-
-                                    <h1>Справочники</h1>
-                                    {{--{{dd($dir)}}--}}
-                                    <?php $i = 0; ?>
-                                    @foreach($dir as $d)
-
-                                        <h2 style="color: darkred;">{{$d['name']}}</h2>
-
-                                        @foreach($d['razdel'] as $razdel)
-                                            <div class="col-md-12">
-                                            <h2>{{$razdel['name']}}</h2>
 
 
-                                            @foreach($razdel['properties'] as $r)
-
-                                                @if(empty($r))
-
-                                                    <p>Нет свойств</p>
-                                                @else
-                                                    <div class="col-md-2">
-                                                        <label for="id_{{$i}}" class="fest">
-                                                            <input type="checkbox"  id="id_{{$i}}" name="directory[]" value="{{$r['id']}}">
-                                                             <img  width="50" height="50"   src="/gallery/directory/{{$r['img']}}" alt="">
-                                                            <p> {{$r['name']}}</p>
-                                                        </label>
-
-                                                    </div>
-
-
-                                                    <?php $i++; ?>
-                                                @endif
-
-                                            @endforeach
-                                        </div>
-                                        @endforeach
-
-                                    @endforeach
-
-
-
-                                </div>
                                                     <div class="ln_solid"></div>
                                                     <div class="form-group">
                                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

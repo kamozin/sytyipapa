@@ -14,9 +14,10 @@
 
 Route::get('/', ['as' => 'main', 'uses' => 'MainController@index']);
 Route::get('/catalog', ['as' => 'main', 'uses' => 'CatalogController@index']);
-Route::get('/catalog/{category}', ['as' => 'main', 'uses' => 'CatalogController@products']);
-Route::get('/products/{product}', ['as' => 'main', 'uses' => 'CatalogController@product']);
+Route::get('/catalog/{url}', ['as' => 'main', 'uses' => 'CatalogController@products']);
+Route::get('/products/{url}', ['as' => 'main', 'uses' => 'CatalogController@product']);
 Route::get('/cart', ['as' => 'main', 'uses' => 'CartController@index']);
+Route::get('/contact', ['as' => 'main', 'uses' => 'MainController@contact']);
 
 
 
@@ -33,6 +34,19 @@ Route::get('/cart', ['as' => 'main', 'uses' => 'CartController@index']);
     Route::post('/home/category/create', 'Admin\CategoryController@create');
     Route::post('/home/category/update', 'Admin\CategoryController@update');
     Route::get('/home/category/destroy/{id}', 'Admin\CategoryController@destroy');
+    Route::get('/home/category/photo/{id}', 'Admin\CategoryController@destroy');
+    Route::get('/home/category/background/{id}', 'Admin\CategoryController@destroy');
+
+
+//Товары
+
+Route::get('/home/products', 'Admin\ProductsController@index');
+Route::get('/home/products/store', 'Admin\ProductsController@store');
+Route::get('/home/products/edit/{id}', 'Admin\ProductsController@edit');
+Route::post('/home/products/create', 'Admin\ProductsController@create');
+Route::post('/home/products/update', 'Admin\ProductsController@update');
+Route::get('/home/products/destroy/{id}', 'Admin\ProductsController@destroy');
+Route::get('/home/products/edit/photos/{id}', 'Admin\ProductsController@updateImg');
 
 
 //});

@@ -10,7 +10,7 @@
                         <div class="panel-heading">Товары</div>
 
                         <div class="panel-body">
-                            <a href="/admin/products/store" class="btn btn-primary">Добавить товар</a>
+                            <a href="/home/products/store" class="btn btn-primary">Добавить товар</a>
                         </div>
                         @if(session()->has('success'))
                             <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -30,6 +30,7 @@
                                     <th>Наименование товара</th>
                                     <th>Цена</th>
                                     <th>Категория</th>
+                                    <th>Обновить фото товара</th>
                                     <th>Редактировать товар</th>
                                     <th>Удалить товар</th>
                                 </tr>
@@ -46,7 +47,7 @@
                                         </td>
                                         <td>
                                             @foreach($category as $c)
-                                                @if($p->id_category==$c->id)
+                                                @if($p->category_id==$c->id)
 
                                                 {{$c->name}}
 
@@ -55,9 +56,9 @@
                                             @endforeach
                                         </td>
 
-                                        <td><a href="/admin/products/edit/photos/{{$p->id}}">Обновить фотографии</a></td>
-                                        <td><a href="/admin/products/edit/{{$p->id}}">Редактировать</a></td>
-                                        <td><a href="/admin/products/destroy/{{$p->id}}">Удалить</a></td>
+                                        <td><a href="/home/products/edit/photos/{{$p->id}}">Обновить фотографии</a></td>
+                                        <td><a href="/home/products/edit/{{$p->id}}">Редактировать</a></td>
+                                        <td><a href="/home/products/destroy/{{$p->id}}">Удалить</a></td>
 
                                     </tr>
                                 @endforeach

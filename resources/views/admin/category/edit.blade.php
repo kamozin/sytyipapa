@@ -61,8 +61,11 @@
                                             @foreach($categories as $c)
 
 
-                                                    <option value="{{$c->id}}">{{$c->name}}</option>
+                                                @if($c->id==$category->id)
 
+                                                @else
+                                                    <option value="{{$c->id}}">{{$c->name}}</option>
+                                                @endif
                                             @endforeach
                                         @else
 
