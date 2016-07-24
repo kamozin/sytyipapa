@@ -29,7 +29,9 @@
             </div>
             <div class="col-sm-5" id="no_padding_left">
                 <div id="logo">
-                    <a href="index_home.html"><img src="/includes/css/image/header/logo_heder.png" title="" alt="" class="img-responsive"/></a>
+                    <a href="/">
+                        <img src="/includes/css/image/header/logo_heder.png" title="" alt="" class="img-responsive"/>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-3" id="time_work">

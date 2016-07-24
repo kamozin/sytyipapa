@@ -34,8 +34,8 @@ Route::get('/contact', ['as' => 'main', 'uses' => 'MainController@contact']);
     Route::post('/home/category/create', 'Admin\CategoryController@create');
     Route::post('/home/category/update', 'Admin\CategoryController@update');
     Route::get('/home/category/destroy/{id}', 'Admin\CategoryController@destroy');
-    Route::get('/home/category/photo/{id}', 'Admin\CategoryController@destroy');
-    Route::get('/home/category/background/{id}', 'Admin\CategoryController@destroy');
+    Route::get('/home/category/photo/{id}', 'Admin\CategoryController@updatePhoto');
+    Route::get('/home/category/background/{id}', 'Admin\CategoryController@updateBackground');
 
 
 //Товары
